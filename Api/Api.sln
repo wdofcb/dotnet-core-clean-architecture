@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29721.120
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaundryApi", "LaundryApi\LaundryApi.csproj", "{AD52140E-B6E8-4330-A744-EBA670CD8824}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaundryApi", "LaundryApi\LaundryApi.csproj", "{AD52140E-B6E8-4330-A744-EBA670CD8824}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "..\Domain\Domain.csproj", "{CD64B3CD-51CD-4395-9B4D-8A81CA5E2C0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{AD52140E-B6E8-4330-A744-EBA670CD8824}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD52140E-B6E8-4330-A744-EBA670CD8824}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD52140E-B6E8-4330-A744-EBA670CD8824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD64B3CD-51CD-4395-9B4D-8A81CA5E2C0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD64B3CD-51CD-4395-9B4D-8A81CA5E2C0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD64B3CD-51CD-4395-9B4D-8A81CA5E2C0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD64B3CD-51CD-4395-9B4D-8A81CA5E2C0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
