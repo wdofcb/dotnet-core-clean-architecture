@@ -13,9 +13,19 @@ namespace Infrastructure
         public static IServiceCollection AddDependencies(this IServiceCollection services, IConfiguration
             configuration)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    configuration.GetConnectionString("DefaultConnection")));
+
+            if (configuration.GetValue<bool>("UseInMemoryDatabase"))
+            {
+                services.AddDbContext<ApplicationDbContext>(options =>
+                    options.UseInMemoryDatabase("LaundryDb"));
+            }
+            else
+            {
+                services.AddDbContext<ApplicationDbContext>(options =>
+          options.UseSqlServer(
+              configuration.GetConnectionString("DefaultConnection")));
+
+            }
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
