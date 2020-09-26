@@ -16,7 +16,6 @@ namespace Application.Orders.Handlers
             _context = context;
         }
 
-
         public async Task<int> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
         {
             var order = new Order()
