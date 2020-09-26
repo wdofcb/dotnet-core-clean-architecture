@@ -1,4 +1,6 @@
+using Application.Common.Interfaces;
 using Infrastructure;
+using LaundryApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
@@ -21,6 +23,8 @@ namespace LaundryApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDependencies(Configuration);
+
+            services.AddScoped<ICurrentUserService, CurrentUserService>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();

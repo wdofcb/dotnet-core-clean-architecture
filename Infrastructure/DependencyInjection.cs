@@ -1,4 +1,5 @@
-﻿using Infrastructure.Identity;
+﻿using Application.Common.Interfaces;
+using Infrastructure.Identity;
 using Infrastructure.Persistence;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
@@ -22,10 +23,10 @@ namespace Infrastructure
             else
             {
                 services.AddDbContext<ApplicationDbContext>(options =>
-          options.UseSqlServer(
-              configuration.GetConnectionString("DefaultConnection")));
-
+                   options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             }
+
+            services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
