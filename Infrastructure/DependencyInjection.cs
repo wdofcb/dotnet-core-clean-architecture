@@ -11,7 +11,7 @@ namespace Infrastructure
     public static class DependencyInjection
     {
         // Extension method to add dependency injection to Startup
-        public static IServiceCollection AddDependencies(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddInfrastrucure(this IServiceCollection services, IConfiguration configuration)
         {
             if (configuration.GetValue<bool>("UseInMemoryDatabase"))
             {
