@@ -1,11 +1,10 @@
 ﻿using Application.Orders.Commands;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace LaundryApi.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     public class OrdersController : ApiController
     {

@@ -35,12 +35,12 @@ namespace Infrastructure.Persistence
                 switch (entry.State)
                 {
                     case EntityState.Added:
-                        entry.Entity.CreatedBy = _currentUserService.UserId;
+                        entry.Entity.CreatedBy = "Wdo"; //_currentUserService.UserId;
                         entry.Entity.CreatedOn = DateTime.Now;
                         break;
 
                     case EntityState.Modified:
-                        entry.Entity.LastModifiedBy = _currentUserService.UserId;
+                        entry.Entity.LastModifiedBy = "Wdo";//_currentUserService.UserId;
                         entry.Entity.LastModifiedOn = DateTime.Now;
                         break;
                 }
