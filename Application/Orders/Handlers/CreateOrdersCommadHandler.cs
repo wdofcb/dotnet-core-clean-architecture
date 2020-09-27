@@ -1,5 +1,6 @@
 ﻿using Application.Common.Interfaces;
 using Application.Orders.Commands;
+using AutoMapper;
 using Domain.Entities;
 using MediatR;
 using System.Threading;
@@ -9,20 +10,18 @@ namespace Application.Orders.Handlers
 {
     class CreateOrdersCommadHandler : IRequestHandler<CreateOrderCommand, int>
     {
-        public IApplicationDbContext _context { get; }
+        private readonly IApplicationDbContext _context;
+        private readonly IMapper _mapper;
 
-        public CreateOrdersCommadHandler(IApplicationDbContext context)
+        public CreateOrdersCommadHandler(IApplicationDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         public async Task<int> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
         {
-            var order = new Order()
-            {
-                NumberOfItems = request.NumberOfItems,
-                CustomerId = request.CustomerId
-            };
+            var order = _mapper.Map<Order>(request);
 
             _context.Orders.Add(order);
             await _context.SaveChangesAsync(cancellationToken);

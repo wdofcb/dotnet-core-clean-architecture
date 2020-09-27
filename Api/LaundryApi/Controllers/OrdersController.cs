@@ -1,6 +1,6 @@
 ﻿using Application.Orders.Commands;
 using Application.Orders.Queries;
-using Domain.Entities;
+using Application.Orders.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -18,7 +18,7 @@ namespace LaundryApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IList<Order>> Get()
+        public async Task<IList<OrderViewModel>> Get()
         {
             return await Mediator.Send(new GetCustomerOrdersQuery() { CustomerId = 3 });
         }
